@@ -1,0 +1,90 @@
+\documentclass[10pt]{article}
+%Gummi|063|=)
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+\usepackage{cite}
+
+\title{\textbf{Performance Analysis Of MPI Over Cluster}}
+\author{Achuth PV\\
+		Anirudh Rao\\
+		Avishkar P}
+\date{}
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+\section{Details of Infiniband Cluster}
+\begin{itemize}
+\item Number of machines: 14 -  2 masters, 12 slaves
+\item OS: CentOS release 6.5 (Final)
+\item CPU: Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
+\begin{itemize}
+\item 2 CPUs: NUMA with 8 cores/each, 1 thread/core
+\item Cache: L1d - 32K, L1i - 32K, L2 : 256K, L3 : 20480K
+\end{itemize}
+\item 64GB RAM
+\item OpenMPI Version : 1.8.4
+\item MVAPICH2 Version: 2.1
+\item InfiniBand card: QLogic Corp. IBA7322 QDR InfiniBand HCA
+\item Infiniband switch : QLogic 12200-18 36-ports
+\item Link speed: 40 Gb/sec (4X QDR)
+\item Ethernet controller: Intel Corporation I350 Gigabit Network Connection
+\end{itemize}
+For more details about CPU and memory, please refer Infiniband\textunderscore CPU\textunderscore details.txt and Infiniband\textunderscore Memory\textunderscore details.txt.
+
+\section{Setting up of CUDA Cluster}
+We setup a CUDA cluster of 4 machines. All the machines are Dell Optiplex 3020 with the following specifications
+\begin{itemize}
+\item 4 Machines
+\item Ubuntu 12.04 64 bit
+\item Intel(R) Core(TM) i3-4130 CPU @ 3.40GHz
+\begin{itemize}
+\item 2 cores, 2 threads each
+\item Cache - 128kB L1, 512kB L2,  3MB L3 
+\end{itemize}
+\item 4 GB RAM
+\item GeForce GT 640
+\begin{itemize}
+\item CUDA cores 384 
+\item 2048 MB RAM
+\item Memory clock rate: 891 Mhz
+\item Memory bus width: 128-bit
+\item GPU clock rate: 902 MHz 
+
+\end{itemize}
+\item CUDA Toolkit 6.5
+\item 500 GB harddisk 
+\item Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411
+\item OpenMPI: 1.8.8
+\item MVAPICH2: 2.1
+\end{itemize}
+
+To set up CUDA cluster, the following steps were followed
+\begin{itemize}
+\item A file based partitions is created~\cite{filebased}
+\item A NFS server is set on the same machine, sharing the partition~\cite{nfssetup}
+\item An user account 'mpiuser' is created on the machine with the nfs partition containing its home
+\item The NFS partition is mounted on other machines on the cluster
+\item The same 'mpiuser' with same gid and uid are created on all the machines, with the same home folder as earlier.
+\item After logging in as 'mpiuser', ssh key is generated and added to authorized\textunderscore keys file
+\item All the desired machines are added into known\textunderscore hosts 
+\item Both mvapich2~\cite{mvapich} and openmpi~\cite{openmpi} versions supporting CUDA-aware MPI are downloaded, built and installed on home folder 
+\end{itemize}
+
+\begin{thebibliography}{9}
+\bibitem{filebased} File based partition, \texttt{https://www.debuntu.org/\\how-to-create-a-filesystem-within-another-partitions-file}
+\bibitem{nfssetup} NFS Setup, \texttt{https://www.digitalocean.com/community/tutorials/\\how-to-set-up-an-nfs-mount-on-ubuntu-12-04}
+\bibitem{mvapich} MVAPICH2-2.1, \texttt{http://mvapich.cse.ohio-state.edu/static/media/\\mvapich/mvapich2-2.1-userguide.html}
+\bibitem{openmpi} OpenMPI, \texttt{https://www.open-mpi.org/faq/?category=buildcuda}
+\end{thebibliography}
+\end{document}
