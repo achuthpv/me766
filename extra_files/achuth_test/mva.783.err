@@ -1,0 +1,4 @@
+/tmp/slurmd/job00783/slurm_script: line 20: $SLURM_NODE_FILE: ambiguous redirect
+[compute09.climate.iitb.ac.in:21469] [[34474,0],0] ORTE_ERROR_LOG: Error in file base/rmaps_base_support_fns.c at line 63
+[compute09.climate.iitb.ac.in:21469] [[34474,0],0] ORTE_ERROR_LOG: Error in file base/plm_base_launch_support.c at line 1735
+[compute09.climate.iitb.ac.in:21469] [[34474,0],0] ORTE_ERROR_LOG: Error in file plm_slurm_module.c at line 212

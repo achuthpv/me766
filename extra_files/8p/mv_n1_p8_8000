@@ -1,0 +1,54 @@
+time taken in host 0 to broadcast is 0.583403
+start of sending A to host 1 at 1461930750.843918
+time taken in host 2 to broadcast is 1.678903
+time taken in host 1 to broadcast is 1.679626
+time taken in host 3 to broadcast is 1.678345
+time taken in host 4 to broadcast is 1.685100
+time taken in host 5 to broadcast is 1.684394
+time taken in host 6 to broadcast is 1.683108
+time taken in host 7 to broadcast is 1.684537
+start of sending A to host 2 at 1461930750.862220
+end of reception of A in host 1 is 1461930750.874270
+start of sending A to host 3 at 1461930750.879517
+end of reception of A in host 2 is 1461930750.892328
+start of sending A to host 4 at 1461930750.915776
+end of reception of A in host 3 is 1461930750.918436
+start of sending A to host 5 at 1461930750.950506
+end of reception of A in host 4 is 1461930750.953392
+start of sending A to host 6 at 1461930750.993323
+end of reception of A in host 5 is 1461930750.996110
+start of sending A to host 7 at 1461930751.028992
+end of reception of A in host 6 is 1461930751.032003
+end of reception of A in host 7 is 1461930751.066491
+end of computation in node 0 at 73.739894
+end of computation in node 7 at 73.855147
+start of sending C in host 7 is 1461930824.921701
+end of computation in node 4 at 74.028795
+end of computation in node 3 at 74.079096
+start of sending C in host 4 is 1461930824.982230
+start of sending C in host 3 is 1461930824.997587
+end of computation in node 1 at 74.496368
+start of sending C in host 1 is 1461930825.370698
+end of sending C from host 1 at 1461930825.464455
+end of computation in node 2 at 76.775602
+end of computation in node 6 at 76.674535
+start of sending C in host 2 is 1461930827.667993
+end of sending C from host 2 at 1461930827.799478
+end of sending C from host 3 at 1461930827.848959
+end of sending C from host 4 at 1461930827.888788
+start of sending C in host 6 is 1461930827.706590
+end of computation in node 5 at 76.936022
+start of sending C in host 5 is 1461930827.932169
+end of sending C from host 5 at 1461930828.015803
+end of sending C from host 6 at 1461930828.068703
+end of sending C from host 7 at 1461930828.102968
+8000.000000	
+8000.000000
+For N= 8000,  in Process 0 Time (MPI) taken for computation  is 78.937522 
+For N= 8000,  in Process 2 Time (MPI) taken for computation  is 78.938237 
+For N= 8000,  in Process 4 Time (MPI) taken for computation  is 78.938222 
+For N= 8000,  in Process 6 Time (MPI) taken for computation  is 78.936298 
+For N= 8000,  in Process 1 Time (MPI) taken for computation  is 78.939441 
+For N= 8000,  in Process 3 Time (MPI) taken for computation  is 78.938150 
+For N= 8000,  in Process 5 Time (MPI) taken for computation  is 78.938012 
+For N= 8000,  in Process 7 Time (MPI) taken for computation  is 78.938182 

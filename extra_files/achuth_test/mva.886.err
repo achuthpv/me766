@@ -1,0 +1,2 @@
+mpirun: Forwarding signal 18 to job
+slurmstepd: error: *** JOB 886 CANCELLED AT 2016-04-28T22:36:48 *** on compute05
