@@ -1,0 +1,23 @@
+--with-cuda-include=/usr/local/cuda/include --with-cuda-libpath=/usr/local/cuda/lib64
+
+
+sudo make uninstall;make clean;./configure SSH_CMD=/usr/bin/ssh --enable-error-messages=all --enable-shared --enable-cuda --with-cuda-include=/usr/local/cuda-6.5/include --with-cuda-libpath=/usr/local/cuda-6.5/lib64 --disable-fortran --enable-mcast  --with-device=ch3:sock --with-device=ch3:nemesis --without-cma --with-libcudart=/usr/local/cuda-6.5/lib64 --with-libcuda=/usr/local/cuda-6.5/lib64 --with-cuda=/usr/local/cuda-6.5;make -j4;sudo make install
+
+
+mpicc -std=c99 -O3 simpleP2P_CUDA_Aware.c -o simplep2p -L/usr/local/cuda/lib64 -lcudart
+
+mpirun -np 2 -host pclab40,pclab43 /mnt/nfs/mpiuser/CodeSamples/chapter09/simplep2p 
+
+export PATH=/usr/local/cuda-6.5/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-6.5/lib64:$LD_LIBRARY_PATH
+export MV2_SMP_USE_CMA=0
+export MV2_SMP_USE_HCA=0
+export C_INCLUDE_PATH=/usr/local/cuda-6.5/include:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=/usr/local/cuda-6.5/include:$CPLUS_INCLUDE_PATH
+export CUDA_INSTALL_PATH=/usr/local/cuda-6.5
+export LDFLAGS="-L$CUDA_INSTALL_PATH/lib64 -lcudart"
+export CFLAGS="-L$CUDA_INSTALL_PATH/include"
+export MV2_USE_CUDA=1
+
+
+

@@ -1,2 +1,2 @@
-ibcompute05 slots=16 max_slots=16
-ibcompute06 slots=16 max_slots=16
+ibcompute05 slots=8 max_slots=16
+ibcompute06 slots=8 max_slots=16

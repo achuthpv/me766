@@ -1,0 +1,110 @@
+time taken in host 0 to broadcast is 0.064692
+start of sending A to host 1 at 1461939460.469498
+time taken in host 2 to broadcast is 0.155071
+time taken in host 1 to broadcast is 0.154677
+end of reception of A in host 1 is 1461939460.507975
+start of sending A to host 2 at 1461939460.507975
+start of sending A to host 3 at 1461939460.511106
+end of reception of A in host 2 is 1461939460.511106
+time taken in host 3 to broadcast is 0.174024
+time taken in host 4 to broadcast is 0.173996
+start of sending A to host 4 at 1461939460.527058
+end of reception of A in host 3 is 1461939460.527057
+start of sending A to host 5 at 1461939460.527797
+end of reception of A in host 4 is 1461939460.527797
+time taken in host 5 to broadcast is 0.181647
+time taken in host 6 to broadcast is 0.181885
+start of sending A to host 6 at 1461939460.534965
+end of reception of A in host 5 is 1461939460.534965
+end of reception of A in host 6 is 1461939460.535643
+start of sending A to host 7 at 1461939460.535643
+time taken in host 12 to broadcast is 0.136593
+time taken in host 11 to broadcast is 0.136212
+time taken in host 9 to broadcast is 0.144218
+time taken in host 10 to broadcast is 0.144960
+time taken in host 13 to broadcast is 0.144441
+time taken in host 14 to broadcast is 0.144530
+time taken in host 7 to broadcast is 0.221587
+end of reception of A in host 7 is 1461939460.574935
+start of sending A to host 8 at 1461939460.574936
+time taken in host 15 to broadcast is 0.184514
+time taken in host 8 to broadcast is 0.184606
+start of sending A to host 9 at 1461939460.577678
+end of reception of A in host 8 is 1461939460.578777
+start of sending A to host 10 at 1461939460.583184
+end of reception of A in host 9 is 1461939460.584641
+start of sending A to host 11 at 1461939460.586758
+end of reception of A in host 10 is 1461939460.588067
+start of sending A to host 12 at 1461939460.592679
+end of reception of A in host 11 is 1461939460.594194
+start of sending A to host 13 at 1461939460.596535
+end of reception of A in host 12 is 1461939460.598015
+start of sending A to host 14 at 1461939460.601103
+end of reception of A in host 13 is 1461939460.602629
+start of sending A to host 15 at 1461939460.606087
+end of reception of A in host 14 is 1461939460.607576
+end of reception of A in host 15 is 1461939460.608003
+end of computation in node 1 at 0.586021
+end of computation in node 3 at 0.584341
+end of computation in node 5 at 0.584131
+end of computation in node 4 at 0.613387
+end of computation in node 6 at 0.611968
+end of computation in node 2 at 0.644303
+end of computation in node 7 at 0.581524
+end of computation in node 8 at 0.584068
+end of computation in node 9 at 0.579232
+end of computation in node 10 at 0.581846
+end of computation in node 11 at 0.577036
+end of computation in node 12 at 0.581540
+end of computation in node 13 at 0.576628
+end of computation in node 15 at 0.576307
+end of computation in node 14 at 0.581275
+end of computation in node 0 at 0.600606
+end of sending C from host 1 at 1461939461.208818
+start of sending C in host 1 is 1461939461.094028
+end of sending C from host 2 at 1461939461.209855
+start of sending C in host 2 is 1461939461.155453
+start of sending C in host 3 is 1461939461.111431
+end of sending C from host 3 at 1461939461.211320
+start of sending C in host 4 is 1461939461.141209
+end of sending C from host 4 at 1461939461.212361
+start of sending C in host 5 is 1461939461.119123
+end of sending C from host 5 at 1461939461.213709
+start of sending C in host 6 is 1461939461.147634
+end of sending C from host 6 at 1461939461.214752
+end of sending C from host 7 at 1461939461.216098
+start of sending C in host 7 is 1461939461.156477
+end of sending C from host 8 at 1461939461.221961
+start of sending C in host 8 is 1461939461.162876
+end of sending C from host 9 at 1461939461.227550
+start of sending C in host 9 is 1461939461.163898
+end of sending C from host 10 at 1461939461.233065
+start of sending C in host 10 is 1461939461.169952
+end of sending C from host 11 at 1461939461.238721
+start of sending C in host 11 is 1461939461.171260
+end of sending C from host 12 at 1461939461.244299
+start of sending C in host 12 is 1461939461.179588
+end of sending C from host 13 at 1461939461.249823
+start of sending C in host 13 is 1461939461.179294
+end of sending C from host 14 at 1461939461.255412
+start of sending C in host 14 is 1461939461.188887
+For N= 2000,  in Process 7 Time (MPI) taken for computation  is 0.908570 
+For N= 2000,  in Process 6 Time (MPI) taken for computation  is 0.908838 
+For N= 2000,  in Process 5 Time (MPI) taken for computation  is 0.908599 
+For N= 2000,  in Process 4 Time (MPI) taken for computation  is 0.908877 
+For N= 2000,  in Process 3 Time (MPI) taken for computation  is 0.908903 
+end of sending C from host 15 at 1461939461.260946
+2000.000000	
+2000.000000
+For N= 2000,  in Process 0 Time (MPI) taken for computation  is 0.908819 
+For N= 2000,  in Process 8 Time (MPI) taken for computation  is 0.871579 
+For N= 2000,  in Process 12 Time (MPI) taken for computation  is 0.871403 
+For N= 2000,  in Process 13 Time (MPI) taken for computation  is 0.871335 
+For N= 2000,  in Process 11 Time (MPI) taken for computation  is 0.871024 
+For N= 2000,  in Process 14 Time (MPI) taken for computation  is 0.871425 
+start of sending C in host 15 is 1461939461.184338
+For N= 2000,  in Process 15 Time (MPI) taken for computation  is 0.871497 
+For N= 2000,  in Process 2 Time (MPI) taken for computation  is 0.918599 
+For N= 2000,  in Process 1 Time (MPI) taken for computation  is 0.918201 
+For N= 2000,  in Process 10 Time (MPI) taken for computation  is 0.881432 
+For N= 2000,  in Process 9 Time (MPI) taken for computation  is 0.880686 

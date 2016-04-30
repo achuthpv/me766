@@ -1,0 +1,46 @@
+time taken in host 8 to broadcast is 0.009147
+time taken in host 10 to broadcast is 0.009023
+time taken in host 13 to broadcast is 0.009124
+time taken in host 4 to broadcast is 0.009537
+time taken in host 15 to broadcast is 0.009157
+time taken in host 9 to broadcast is 0.009234
+time taken in host 11 to broadcast is 0.009016
+time taken in host 12 to broadcast is 0.009205
+time taken in host 14 to broadcast is 0.009391
+time taken in host 2 to broadcast is 0.011282
+time taken in host 7 to broadcast is 0.009472
+time taken in host 3 to broadcast is 0.011412
+time taken in host 1 to broadcast is 0.012115
+time taken in host 5 to broadcast is 0.011206
+time taken in host 6 to broadcast is 0.009711
+time taken in host 0 to broadcast is 0.028402
+start of sending A to host 1 at 1461987932.463389
+start of sending A to host 2 at 1461987932.463646
+start of sending A to host 3 at 1461987932.463902
+start of sending A to host 4 at 1461987932.464158
+start of sending A to host 5 at 1461987932.464412
+start of sending A to host 6 at 1461987932.464645
+start of sending A to host 7 at 1461987932.465092
+start of sending A to host 8 at 1461987932.465348
+start of sending A to host 9 at 1461987932.465656
+start of sending A to host 10 at 1461987932.465912
+start of sending A to host 11 at 1461987932.466169
+start of sending A to host 12 at 1461987932.466395
+start of sending A to host 13 at 1461987932.466649
+start of sending A to host 14 at 1461987932.467081
+start of sending A to host 15 at 1461987932.467335
+end of reception of A in host 4 is 1461987932.940055
+end of reception of A in host 6 is 1461987932.940611
+end of reception of A in host 3 is 1461987932.941125
+end of reception of A in host 1 is 1461987932.941683
+end of reception of A in host 2 is 1461987932.940684
+end of reception of A in host 13 is 1461987932.942263
+end of reception of A in host 15 is 1461987932.942190
+end of reception of A in host 8 is 1461987932.942133
+end of reception of A in host 9 is 1461987932.941977
+end of reception of A in host 11 is 1461987932.942313
+end of reception of A in host 10 is 1461987932.941992
+end of reception of A in host 12 is 1461987932.942230
+end of reception of A in host 14 is 1461987932.942282
+end of reception of A in host 7 is 1461987932.942225
+end of reception of A in host 5 is 1461987932.942614
