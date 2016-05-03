@@ -26,15 +26,15 @@
 
 \section{Introduction}
 
-Clusters are widely used in the field of high performance computing to scale  computing beyond a single node. In these cluster, multiple nodes connected via communication networks share the computation load, thus giving scalability and speed up. But, the communication networks between these nodes have always been a major bottleneck in the performance and scalability of these high performance clusters.
+Clusters are widely used in the field of high performance computing to scale  computing beyond a single node. In  clusters, multiple nodes connected via communication networks share the computation load, thus giving scalability and speed up. But, the communication networks between these nodes have always been a major bottleneck in the performance and scalability of these high performance clusters.
 
-There are multiple types of communication networks used in these clusters. Some examples are: Ethernet, Myrinet, InfiniBand, etc. Nodes communicate via these networks using various message passing systems, with message passing interface (MPI) as one of the standardized and commonly used systems.
+There are multiple modes of communication used in these clusters. Some examples are: Ethernet, Myrinet, InfiniBand, etc. Nodes communicate via these interfaces using various message passing systems, message passing interface (MPI) being one of the standard and commonly used systems.
 
-Ethernet is the most widely LAN technology. It works using TCP/IP stack and  is based on IEEE 802.3 stadard. It supports a wide range of connectors and has good interoperability and is cheap. 
+Ethernet is the most widely used LAN technology. It works using TCP/IP stack and  is based on IEEE 802.3 standard. It supports a wide range of connectors and has good interoperability and is cheap. 
 
 InfiniBand (IB) is a communication architecture which is used for low latency and high bandwidth inter-server communication~\cite{pfister2001introduction}. It was developed as part of Open Fabrics Alliance. It is highly reliable, scalable and has very good performance. Unlike Ethernet based systems which runs algorithm on CPU, the IB adapter can handle network protocol itself, thus freeing up CPU and OS, as well as bypassing multiple system calls. Depending upon the PCI-e technology node's motherboard supports, the performance of InfiniBand network changes. 
 
-MPI can be used with CUDA as CUDA over MPI to utilize the GPU cards residing in multiple nodes in a cluster. The communication bottle neck in this method is that, for each data transfer between machines, data has to be moved from the device to the host memory and then use MPI to transer the data between machines. The data is then copied to device from host at the receiving node. CUDA-Aware MPI~\cite{cudaaware,cheng2014professional} is used to reduce this overhead. It uses unified virtual addressing (UVA) feature, available in CUDA cards with compute capability 2.0 and later, and CUDA 4.0 and later, which combines the host memory and memory of GPUs within a system as one large virtual address space. CUDA-Aware MPI thus supports transferring GPU buffers which exists on a particular machine's GPU card to other machine's GPU card directly, without using host buffer. This reduces many overheads and thus increases communication bandwidth between GPU cards over network. Thus it is easy to pipeline all operations requiring message transfer. Also features like GPU direct can be used by MPI libraries to speed up the communication, by bypassing multiple hardware level overheads. 
+MPI can also be used with CUDA as CUDA over MPI to utilize the GPU cards residing in multiple nodes in a cluster. The communication bottle neck in this method is that, for each data transfer between machines, data has to be moved from the device to the host memory and then use MPI to transfer the data between machines. The data is then copied to device from host at the receiving node. CUDA-Aware MPI~\cite{cudaaware,cheng2014professional} is used to reduce this overhead. It uses unified virtual addressing (UVA) feature, available in CUDA cards with compute capability 2.0 and later, and CUDA 4.0 and later, which combines the host memory and memory of GPUs within a system as one large virtual address space. CUDA-Aware MPI thus supports transferring GPU buffers which exists on a particular machine's GPU card to other machine's GPU card directly, without using host buffer. This reduces many overheads and thus increases communication bandwidth between GPU cards over network. Thus it is easy to pipeline all operations requiring message transfer. Also features like GPU direct can be used by MPI libraries to speed up the communication, by bypassing multiple hardware level overheads. 
 
 In this project, We intend to evaluate various communication platforms available for parallel computing/ cluster computing. We evaluate different MPI implementations, CUDA, CUDA-Aware MPI techniques over different network setup like Ethernet, IP over InfiniBand and shared memory. For this purpose, we use a matrix multiplication program, with matrix size varied from 2000x2000 to 10000x10000, and plot the various computation and data transfer times. The plots are used to evaluate and provide inferences.There are 2 open implementations of MPI available, which support InfiniBand communication along with Ethernet Viz. OpenMPI and MVAPICH2. Both these implementations also support CUDA-Aware MPI technique. We use these two implementations for our evaluation.
 
@@ -43,7 +43,7 @@ In this project, We intend to evaluate various communication platforms available
 \label{methods}
 
 For our work, we used the following tools: OpenMPI and MVAPICH2.
-Both of them implement MPI standards. OpenMPI targets certain common usages, while MVAPICH2 is an extension of MPICH, which is the standard MPI implementation. Both of them support lots of communication interfaces like InfiniBand, Ethernet, etc. They also support CUDA-Aware MPI.
+Both of them implement MPI standard. OpenMPI targets certain common usages, while MVAPICH2 is an extension of MPICH to enable support to different communication modes. Both of them support lots of communication interfaces like InfiniBand, Ethernet, etc. They also support CUDA-Aware MPI.
 
 
 
@@ -54,22 +54,27 @@ Our test code, matrix multiplication was performed using OpenMPI and MVAPICH2 ov
 
 Using OpenMPI, MVAPICH2 implementation, the following combination of the code was run:
 \begin{enumerate}
-\item OpenMPI with matrix size 2000,4000,6000,8000,10000 on single node with 8,16 processes
-\item OpenMPI with matrix size 2000,4000,6000,8000,10000 on two nodes with 8,16,32 processes and communication between hosts through Ethernet
-\item OpenMPI with matrix size 2000,4000,6000,8000,10000 on two nodes with 8,16,32 processes and communication between hosts through InfiniBand
-\item MVAPICH2 with matrix size 2000,4000,6000,8000,10000 on single node with 8,16 processes
-\item MVAPICH2 with matrix size 2000,4000,6000,8000,10000 on two nodes with 8,16,32 processes and communication between hosts through Ethernet
-\item MVAPICH2 with matrix size 2000,4000,6000,8000,10000 on two nodes with 8,16,32 processes and communication between hosts through InfiniBand
+\item OpenMPI with matrix size 2000, 4000, 6000, 8000, 10000 on a single node with 8,16 processes
+\item OpenMPI with matrix size 2000, 4000, 6000, 8000, 10000 on two nodes with 8,16,32 processes and communication between hosts through Ethernet
+\item OpenMPI with matrix size 2000, 4000, 6000, 8000, 10000 on two nodes with 8,16,32 processes and communication between hosts through InfiniBand
+\item MVAPICH2 with matrix size 2000, 4000, 6000, 8000, 10000 on a single node with 8,16 processes
+\item MVAPICH2 with matrix size 2000, 4000, 6000, 8000, 10000 on two nodes with 8,16,32 processes and communication between hosts through Ethernet
+\item MVAPICH2 with matrix size 2000, 4000, 6000, 8000, 10000 on two nodes with 8,16,32 processes and communication between hosts through InfiniBand
 \end{enumerate}
 
 
-To check the performance of CUDA-Aware MPI, we setup a CUDA cluster. We installed OpenMPI and MVAPICH2 on this cluster. Codes for both the CUDA over MPI and CUDA-Aware MPI are written such that, they send messages of lengths from 1 Byte to 4 MB between two MPI processes. In the CUDA over MPI case, we use  pinned host memory to communicate between the host and the device, thus speeding up host-device communication. We used non-blocking method for communication. 
+To check the performance of CUDA-Aware MPI, we setup a CUDA cluster. We installed OpenMPI and MVAPICH2 on this cluster. Codes for both the CUDA over MPI and CUDA-Aware MPI bandwidth test are written such that, they send messages of lengths from 1 Byte to 4 MB between two MPI processes. In the CUDA over MPI case, we use  pinned host memory to communicate between the host and the device, thus speeding up host-device communication. We used non-blocking method for communication. 
 Two methods are used for evaluation:
 \begin{enumerate}
 \item Two processes are run on same node.
 \item Two processes are run on separate nodes.
 \end{enumerate}  
 Bandwidth for different message sizes are used for performance  evaluation.
+We also implemented matrix multiplication using CUDA-over MPI, where we evaluated timing performances for:
+\begin{enumerate}
+\item Matrix size 2000, 4000, 6000, 8000, 10000 on a single node with 4 processes
+\item Matrix size 2000, 4000, 6000, 8000, 10000 on two nodes with total 4 processes and communication between hosts through Ethernet
+\end{enumerate}
 
 \section{Details of Infiniband Cluster}
 \begin{itemize}
@@ -133,19 +138,21 @@ To set up the CUDA cluster, following steps were followed:
 \section{Plots for MPI}
 Using the methods discussed in Section~\ref{method}, performance evaluation is done for all the cases. The data obtained is then plotted using MATLAB for performance analysis.
 
-The flow for our test code in MPI invovles : 
+The flow for our test code in MPI involves : 
 \begin{enumerate}
 \item Broadcast B matrix to all nodes.
-\item Send parts of A from master process (process 0) to other processs (within same node and also to another node).
+\item Send parts of A from master process (process 0) to other processes (within same node and also to another node).
 \item Computation assigned to each process
 \item Send back part od C computed at each process to master process.
 \end{enumerate}
 Three out of four steps in the code involves communication. We have recorded timings of each of these steps to evaluate the performance for different combinations of methods of communication, matrix size, number of processes and different implementations of MPI.
 The plots are made with fixed number of processes, for varying size of matrices to evaluate performance of different methods of communication in parallel programming and different implementations of MPI which is our main goal.
 
-First set of plots give timings for entire code. Second set of plots give time taken to broadcast B. Third set of plots give time taken to transfer parts of A. Last and final set of plots give the time taken to transfer back computed matrix C.
+Figure~\ref{totaltime} plots give timings for entire code. Figure~\ref{broadcast} plots give time taken to broadcast B. Figure~\ref{sendrecvA} plots give time taken to transfer parts of A. Last and final set of plots, Figure~\ref{sendrecvC} give the time taken to transfer back computed matrix C.
 
+For bandwidth test of CUDA-Aware MPI and CUDA over MPI, data of sizes from 1 Byte to 4 MB are communicated between the GPUs. For each process, 100 iterations are taken and the mean time is used to calculate the bandwidth. Figure~\ref{cuda} plots compare their performances on same and different nodes.
 
+For matrix  multiplication using CUDA over MPI, we have split matrices A and B to 2 equal parts A$_{0}$, A$_{1}$ and B$_{0}$, B$_{1}$. They are used to calculate 4 parts of matrix C : C$_{00}$, C$_{01}$, C$_{10}$, C$_{11}$, by sending  pair (A$_0$,B$_0$), (A$_0$,B$_1$),(A$_1$,B$_0$), (A$_1$,B$_1$) to each of the 4 processes. Figure~\ref{cudamatrix} plots compare performances on same and different nodes for total time for execution, send-receive time for matrix A and B, and send-receive time for matrix C.
 
 \begin{figure*}[p]
 \centering
@@ -249,8 +256,33 @@ First set of plots give timings for entire code. Second set of plots give time t
    \label{cuda}
 \end{figure*}
 
+
+\begin{figure*}[p]
+\centering
+        \subfigure{%
+        	\centering
+            \label{alignM}
+            \includegraphics[width=0.7\textwidth]{figure/Total_Matrix.png}
+        }
+     
+        \subfigure{%
+           \label{alignB}
+           \includegraphics[width=0.7\textwidth]{figure/A_B_Matrix.jpg}
+        }
+        
+        \subfigure{%
+        	\centering
+            \label{shiftM}
+            \includegraphics[width=0.7\textwidth]{figure/C_Matrix.jpg}
+        }
+    \caption{Comparison of Timings for CUDA Over MPI Matrix Multiplication}
+   \label{cudamatrix}
+\end{figure*}
+
+
 \subsection{Observations and Inferences}
 
+From Figure~\ref{totaltime}, \ref{broadcast}, \ref{sendrecvA}, and \ref{sendrecvC}, it can be inferred that: 
 \begin{enumerate}
 \item MPI run over InfiniBand communication takes far lesser time than Ethernet based communication. This is obvious as InfiniBand has higher data rates compared to Ethernet. This performance boost can be significantly seen in OpenMPI but not so much in MVAPICH2.
 
@@ -265,7 +297,16 @@ First set of plots give timings for entire code. Second set of plots give time t
 \item Comparing the two implementations of MPI, we see that OpenMPI has a better performance compared to MVAPICH2. Also we see that in case of MVAPICH2, there is no much difference in performance when we switch from Ethernet to InfiniBand for communication. The reason still unclear, may also be a configuration issue in the cluster.
 \end{enumerate}
 
-As shown in Figure~\ref{cuda}, it can be seen that, CUDA-Aware MPI out performs CUDA over MPI, for both test cases. There is a performance difference of  10 times for messages of length 4 MB for the same node test case. This is because of the overcoming of overhead provided by CUDA over MPI, where the host to device and device  to host communication becomes an overhead. This overhead is not there for the CUDA-Aware MPI case.  For the second test case, the 1GB network of the cluster becomes a bottleneck, resulting the saturation of speed.
+In Figure~\ref{cuda}, it can be seen that, CUDA-Aware MPI out performs CUDA over MPI, for both test cases. There is a performance difference of  10 times for messages of length 4 MB for the same node test case. This is because of the overcoming of overhead provided by CUDA over MPI, where the host to device and device  to host communication becomes an overhead as well as a bottle neck. This overhead is not there for the CUDA-Aware MPI case, where communication happens directly between the two memory locations of the same GPU.  For the second test case, the 1GB network of the cluster becomes a bottleneck, resulting the saturation of speed. Also, for CUDA over MPI, the multiple read and write onto the host buffer and further communication congestion results in poorer performance compared to CUDA-Aware MPI.
+
+From Figure~\ref{cudamatrix} plots, it can be inferred that
+\begin{enumerate}
+\item For send-receive of A and B, it takes more time over the 1GbE network for the different node case compared to same node case.
+\item The matrix multiplication (using CUDA over MPI) performance for 4 processes on same node is poorer compared to 4 processes distributed over two nodes for larger matrix sizes, even though performance is similar for smaller matrices. 
+\item For the transfer of C matrix, more time is taken with in same node for higher matrix sizes.  This is  because, 1.2 GB memory is required per process for 10000x10000 matrix multiplication and for 4 process on same node, allocated space goes beyond 4 GB RAM. Thus, some part of C matrix gets stored in SWAP memory, resulting in slow down of data transfer.
+\end{enumerate}
+
+, 
 
 \AtEndEnvironment{thebibliography}{
 
